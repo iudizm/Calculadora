@@ -3,9 +3,6 @@
 /**
  * Classe de de conexão ao banco de dados mysql.
  */
-namespace App;
-use \PDO;
-
 class Sql extends PDO
 {
     private $conn;
@@ -13,7 +10,7 @@ class Sql extends PDO
     public function __construct()
     {
       // code...
-      $this->conn = new PDO("mysql:host=localhost;dbname=dbcalculadora", "root", "");
+      $this->conn = new PDO("mysql:host=127.0.1:3306;dbname=dbcalculadora", "root", "");
 
     }
 
@@ -56,14 +53,4 @@ class Sql extends PDO
   	}
 
 
-
-
-
-
-
 }
-
-
-
-
- ?>

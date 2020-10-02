@@ -12,6 +12,8 @@ class UsuarioTest extends TestCase
   {
     $user = new Usuario();
 
+
+
     // dado que
     // foram passados o login e senha,
     $user->entrarLogin("lorem");
@@ -21,6 +23,23 @@ class UsuarioTest extends TestCase
     //o objeto deve armazenar os dados:
     $this->assertTrue($user->obterLogin() == "lorem");
     $this->assertTrue($user->obterSenha() == "ipsum");
+
+    // dado que
+    // Usuario tenha login e senha
+    $this->assertTrue($user->obterLogin() == 'lorem');
+    $this->assertTrue($user->obterSenha() == 'ipsum');
+
+    // quando
+    // Usuario registra os dados no Banco
+    $user->cadastrarNoBanco();
+
+    // entao
+    // usuario deve conter todos seus dados
+    $this->assertTrue($user->obterId() != '');
+    $this->assertTrue($user->obterLogin() == 'lorem');
+    $this->assertTrue($user->obterSenha() == 'ipsum');
+
+
 
     // dado que:
     // foram passados login e senha,
@@ -37,6 +56,7 @@ class UsuarioTest extends TestCase
 
     // Usuario deve ser capaz de listar os calculos já feitos por ele.
     $this->assertTrue($user->obterCalculos());
+
   }
 
   public function testAtributosUsuario()
