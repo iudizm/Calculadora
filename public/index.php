@@ -10,6 +10,7 @@ use App\Calculadora;
 
      CALCULADORA v1.0
      </h1>
+     <p><strong>Opera com 2 números inteiros.</p>
  </head>
 
  <body

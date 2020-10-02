@@ -1,9 +1,10 @@
 <?php
 /**
- * Uma Calculadora que capaz de operar com DOIS valores.
+ * Uma Calculadora que capaz de operar com DOIS valores inteiros.
  *
  */
 namespace App;
+
 class Calculadora
 {
   private $a;
@@ -50,7 +51,7 @@ class Calculadora
       return "ZERO NÃO É UM DIVISOR VÁLIDO";
     }
   }
-
+  
   public function obterDivisor()
   {
       return $this->b;
