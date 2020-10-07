@@ -66,7 +66,7 @@ try {
        $stmt->bindParam(":A", $dadoA, PDO::PARAM_INT);
        $stmt->bindParam(":B", $dadoB, PDO::PARAM_INT);
        $stmt->bindParam(":OPERACAO", $operacao, PDO::PARAM_STR);
-       $stmt->bindParam(":RESULTADO", $resultado, PDO::PARAM_FLOAT);
+       $stmt->bindParam(":RESULTADO", $resultado, PDO::PARAM_INT);
        echo "<br><strong> ( $dadoA ) $operacao ( $dadoB ) = $resultado";
        $stmt->execute();
        echo "<br><br><strong> Adicionado com sucesso ao banco de dados!";
