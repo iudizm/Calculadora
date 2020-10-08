@@ -1,9 +1,10 @@
 <?php
+namespace App;
+
 /**
- * Uma Calculadora que capaz de operar com DOIS valores.
+ * Uma Calculadora que opera com DOIS valores inteiros.
  *
  */
-namespace App;
 class Calculadora
 {
   private $a;

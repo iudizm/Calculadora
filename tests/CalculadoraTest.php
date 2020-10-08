@@ -5,100 +5,124 @@ use App\Calculadora;
 
 class CalculadoraTest extends TestCase
 {
-  public function testSomaCalculadora()
+  public function testSomaSimples()
   {
     $calc = new Calculadora();
 
-    // Soma simples
     $calc->entrarA(1);
     $calc->entrarB(2);
-    $this->assertTrue($calc->somar() == 3);
+    $this->assertEquals($calc->somar(), 3);
+  }
 
-    // Propriedade comutativa da soma:
+  public function testSomaComutativa()
+  {
+    $calc = new Calculadora();
     // ordem dos fatores nao altera o resultado
     $calc->entrarA(2);
     $calc->entrarB(1);
-    $this->assertTrue($calc->somar() == 3);
+    $this->assertEquals($calc->somar(), 3);
+  }
 
-    // Propriedade de identidade da soma:
+  public function testSomaIdentidade()
+  {
+     $calc = new Calculadora();
     // x + 0 = x
     $calc->entrarA(0);
     $calc->entrarB(5);
-    $this->assertTrue($calc->somar() == 5);
+    $this->assertEquals($calc->somar(), 5);
 
-    // Propriedade associativa da soma:
+  }
+
+  public function testSomaAssociativa()
+  {
+    $calc = new Calculadora();
     // alterar o agrupamento dos fatores não altera a soma
     $calc->entrarA(100+100);
     $calc->entrarB(0);
-    $this->assertTrue($calc->somar() == 200);
+    $this->assertEquals($calc->somar(), 200);
   }
 
-  public function testSubtracaoCalculadora()
+  public function testSubtracaoSimples()
   {
     $calc = new Calculadora();
 
-    // Subtração comum:
     $calc->entrarA(5);
     $calc->entrarB(8);
     $sub1 = $calc->subtrair();
-    $this->assertTrue($sub1 == -3);
+    $this->assertEquals($sub1, -3);
 
     $calc->entrarA(8);
     $calc->entrarB(5);
     $sub2 = $calc->subtrair();
-    $this->assertTrue($sub2 == 3);
+    $this->assertEquals($sub2, 3);
+  }
 
+  public function testSubtracaoRespectiva()
+  {
+    $calc = new Calculadora();
+    $calc->entrarA(5); 
+    $calc->entrarB(8);
+    $sub1 = $calc->subtrair();
+    $calc->entrarA(8);
+    $calc->entrarB(5);
+    $sub2 = $calc->subtrair();
     // Não é associativa: 5-8 != 8-5
     $this->assertTrue($sub1 != $sub2);
   }
 
-  public function testMultiplicacaoCalculadora()
+  public function testMultiplicacaoElementoNeutro()
   {
     $calc = new Calculadora();
-
-    // Elemento neutro: a*1 = a
     $calc->entrarA(420);
     $calc->entrarB(1);
-    $this->assertTrue($calc->multiplicar() == 420);
+    $this->assertEquals($calc->multiplicar(), 420); 
+  }
 
-    // Numero zero: a*0 = 0
+  public function testMultiplicacaoComZero()
+  {
+    $calc = new Calculadora();
     $calc->entrarA(420);
     $calc->entrarB(0);
-    $this->assertTrue($calc->multiplicar() == 0);
+    $this->assertEquals($calc->multiplicar(), 0);
+  }
 
-    // Propriedade comutativa da multiplicação: a*b = b*a
+  public function testMultiplicacaoComutativa()
+  {
+    $calc = new Calculadora();
     $calc->entrarA(5);
     $calc->entrarB(4);
-    $this->assertTrue($calc->multiplicar() == 20);
+    $mult1 = $calc->multiplicar();
 
     $calc->entrarA(4);
     $calc->entrarB(5);
-    $this->assertTrue($calc->multiplicar() == 20);
-
-    // Propriedade distributiva da multiplicação: (a*b)*c = a*(b*c)
-    // -- apenas para 3+ valores
-
-    // Propriedade associativa da multiplicação: a*(b + c) = a*b + a*c
-    // -- apenas para 3+ valores
+    $mult2 = $calc->multiplicar();
+    $this->assertEquals($mult2, 20);
+    $this->assertEquals($mult1, 20);
+    $this->assertEquals($mult1, $mult2);
   }
 
-  public function testDivisaoCalculadora()
+  public function testDivisaoSimples()
   {
-    // $a = dividendo
-    // $b = divisor
     $calc = new Calculadora();
-
-    // Divisao: é possivel agrupar 6 grupos de 5 dentro de 30
+    // É possivel agrupar 6 grupos de 5 dentro de 30
     $calc->entrarA(30);
     $calc->entrarB(5);
-    $this->assertTrue($calc->dividir() == 6);
+    $this->assertEquals($calc->dividir(), 6);
+  }
 
-    // Zero dividido por qualquer número sempre será zero: 0/x = 0
+  public function testDivisaoComZeroDividendo()
+  {
+    $calc = new Calculadora();
     $calc->entrarA(0);
     $calc->entrarB(555);
-    $this->assertTrue($calc->dividir() == 0);
+    $this->assertEquals($calc->dividir(), 0);
+  }
 
-    // Zero não pode ser o divisor: a/0 NÃO EXISTE
-    $this->assertTrue($calc->obterDivisor() != 0);
+  public function testDivisaoComZeroDivisor()
+  {
+    $calc = new Calculadora();
+    $calc->entrarA(64);
+    $calc->entrarB(0);
+    $this->assertEquals($calc->dividir(), "ZERO NÃO É UM DIVISOR VÁLIDO");
   }
 }

@@ -6,7 +6,8 @@ use App\Calculadora;
 
  <html>
  <head>
-   <h1 style= "font-family:fantasy; color:red; text-align:center">
+   <h1 
+   style= "font-family:fantasy; color:red; text-align:center">
 
      CALCULADORA v1.0
      </h1>
@@ -15,16 +16,24 @@ use App\Calculadora;
  <body
  style= "background-color:powderblue; text-align:center">
 
-   <form action="index.php" method="post" style="font-family:fantasy; color:gray;">
+   <form action="index.php" method="post" 
+   style="font-family:fantasy; color:gray;">
      A: <br/>
      <input type="number" name="nA"></br>
      B: <br/>
      <input type="number" name="nB"></br>
      </br>
-     <input type="submit" name="somar" value="A+B" style="font-family:fantasy; color:orange;">
-     <input type="submit" name="subtrair" value="A-B" style="font-family:fantasy; color:orange;">
-     <input type="submit" name="multiplicar" value="A.B" style="font-family:fantasy; color:orange;">
-     <input type="submit" name="dividir" value="A/B" style="font-family:fantasy; color:orange;">
+     <input type="submit" name="somar" value="A+B"
+     style="font-family:fantasy; color:orange;">
+     
+     <input type="submit" name="subtrair" value="A-B"
+     style="font-family:fantasy; color:orange;">
+     
+     <input type="submit" name="multiplicar" value="A.B"
+     style="font-family:fantasy; color:orange;">
+     
+     <input type="submit" name="dividir" value="A/B"
+     style="font-family:fantasy; color:orange;">
    </form>
    <br>
  </body>
@@ -66,7 +75,7 @@ try {
        $stmt->bindParam(":A", $dadoA, PDO::PARAM_INT);
        $stmt->bindParam(":B", $dadoB, PDO::PARAM_INT);
        $stmt->bindParam(":OPERACAO", $operacao, PDO::PARAM_STR);
-       $stmt->bindParam(":RESULTADO", $resultado, PDO::PARAM_FLOAT);
+       $stmt->bindParam(":RESULTADO", $resultado, PDO::PARAM_INT);
        echo "<br><strong> ( $dadoA ) $operacao ( $dadoB ) = $resultado";
        $stmt->execute();
        echo "<br><br><strong> Adicionado com sucesso ao banco de dados!";
