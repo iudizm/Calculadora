@@ -17,7 +17,7 @@ Calculadora integrada a um banco de dados.
     - No localhost, criar um novo "schema" de nome "test".
     - Criar a tabela "tb_calculos"
     - A tabela deve conter as colunas: num_a, num_b, des_operacao, num_resultado, id_calculo(primary key), dt_calculo(timestamp).
-    - Alterações podem ser feitas em `/public/index.php : linha 36`
+    - Alterações podem ser feitas em `/public/index.php : linha 44`
         
 ## Para rodar os testes:
 
