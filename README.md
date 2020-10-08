@@ -5,7 +5,7 @@ Calculadora integrada a um banco de dados.
 ### Requisitos para instalação:
 
 - Banco de dados mysql
-- ALgum servidor para rodar o PHP, utilizado: Apache
+- Servidor local Apache ou outro de sua escolha para rodar o php no navegador web
 - Composer
 - PHP 7+
 
@@ -18,6 +18,7 @@ Calculadora integrada a um banco de dados.
     - Criar a tabela "tb_calculos"
     - A tabela deve conter as colunas: num_a, num_b, des_operacao, num_resultado, id_calculo(primary key), dt_calculo(timestamp).
     - Alterações podem ser feitas em `/public/index.php : linha 44`
+    - Para utilizar o programa, entre no servidor local Apache, ou outro de sua escolha e rode o diretório `/public` que contém o arquivo `index.php`.
         
 ## Para rodar os testes:
 
