@@ -4,13 +4,13 @@ Calculadora integrada a um banco de dados.
 
 ### Requisitos para instalação:
 
-- Banco de dados mysql.
+- Banco de dados mysql
 - Composer
 - PHP 7+
 
 ### Passos necessários para utilização:
 
-- Iiniciar e atualizar o composer no projeto.
+- Iniciar e o Composer no projeto. --> `composer update`
 - Configurar o acesso ao banco de dados:
 
     - No localhost, criar um novo "schema" de nome "test".
