@@ -5,7 +5,7 @@ Calculadora integrada a um banco de dados.
 ### Requisitos para instalação:
 
 - Banco de dados mysql
-- Servidor local Apache ou outro de sua escolha para rodar o php no navegador web
+- Servidor local Apache para rodar o php no navegador web
 - Composer
 - PHP 7+
 
