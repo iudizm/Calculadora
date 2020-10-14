@@ -11,7 +11,9 @@ Calculadora integrada a um banco de dados.
 
 ### Passos necessários para utilização:
 
-- Iniciar e o Composer no projeto. --> `composer update`
+- Iniciar o Composer no projeto. --> `composer update`
+## Banco de Dados
+
 - Configurar o acesso ao banco de dados:
 
     - No localhost, criar um novo "schema" de nome "test".
@@ -22,5 +24,4 @@ Calculadora integrada a um banco de dados.
         
 ## Para rodar os testes:
 
-- Instalar o PHPUnit no projeto, pelo composer --> `composer require --dev phpunit/phpunit ^9`
 - Rodar os testes através do comando --> `./vendor/bin/phpunit`
