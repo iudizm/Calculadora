@@ -14,15 +14,13 @@ Calculadora integrada a um banco de dados.
 - `sudo apt install phpunit` 
 - Iniciar o Composer no projeto. --> `composer update`
 
-### Banco de Dados
-
-- Configurar o acesso ao banco de dados:
+- _Configurando o acesso ao banco de dados:_
 
     - No localhost, criar um novo "schema" de nome "test".
     - Criar a tabela "tb_calculos"
     - A tabela deve conter as colunas: num_a, num_b, des_operacao, num_resultado, id_calculo(primary key), dt_calculo(timestamp).
     - Alterações podem ser feitas em `/public/index.php : linha 44`
-    - Para utilizar o programa, entre pelo servidor local e rode o diretório `/public` que contém o arquivo `index.php`.
+ * Para utilizar o programa, entre pelo servidor local e rode o diretório `/public` que contém o arquivo `index.php`.
         
 ## Para rodar os testes:
 
