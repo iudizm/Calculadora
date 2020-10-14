@@ -45,7 +45,7 @@ use App\Calculadora;
  $servername = "localhost";
  $username = "root";
  $password = "";
- $dbname = "test";
+ $dbname = "db_calculadora";
 
 try {
 
@@ -55,7 +55,7 @@ try {
    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
    // prepara a execucao da query
-   $stmt = $conn->prepare("INSERT INTO tb_calculos(num_a, num_b, des_operacao, num_resultado) VALUES (:A, :B, :OPERACAO, :RESULTADO)");
+   $stmt = $conn->prepare("INSERT INTO tb_calculos(num_a, num_b, desc_operacao, num_resultado) VALUES (:A, :B, :OPERACAO, :RESULTADO)");
 
 
    // Garante que foram passados A e B
