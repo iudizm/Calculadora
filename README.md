@@ -9,10 +9,12 @@ Calculadora integrada a um banco de dados.
 - Composer
 - PHP 7+
 
-### Passos necessários para utilização:
+## Passos necessários para utilização:
 
+- `sudo apt install phpunit` 
 - Iniciar o Composer no projeto. --> `composer update`
-## Banco de Dados
+
+### Banco de Dados
 
 - Configurar o acesso ao banco de dados:
 
