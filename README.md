@@ -11,14 +11,17 @@ Calculadora integrada a um banco de dados.
 
 ## Passos necessários para utilização:
 
-- `sudo apt install phpunit` 
-- Iniciar o Composer no projeto. --> `composer update`
+- instalar o PHPUnit. --> `sudo apt install phpunit`.
+- Iniciar o Composer no projeto. --> `composer update`.
 
 - _Configurando o acesso ao banco de dados:_
 
-    - No localhost, criar um novo "schema" de nome "db_calculadora".
-    - Criar a tabela "tb_calculos"
-    - A tabela deve conter as colunas: num_a, num_b, desc_operacao, num_resultado, id_calculo(primary key), dt_calculo(timestamp).
+    - No localhost, criar um novo "schema" de nome `"db_calculadora"`.
+    - Criar a tabela `"tb_calculos"`.
+    - A tabela deve conter as colunas: 
+    
+    `num_a, num_b, desc_operacao, num_resultado, id_calculo(primary key), dt_calculo(timestamp)`.
+    
     - Alterações podem ser feitas em `/public/index.php : linha 44`
  * Para utilizar o programa, entre pelo servidor local e rode o diretório `/public` que contém o arquivo `index.php`.
         
