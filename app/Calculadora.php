@@ -1,15 +1,11 @@
 <?php
 namespace App;
 
-/**
- * Uma Calculadora que opera com DOIS valores inteiros.
- *
- */
 class Calculadora
 {
   private $a;
   private $b;
-
+  
   public function __construct()
   {
     $this->a = 0;
@@ -43,18 +39,9 @@ class Calculadora
 
   public function dividir()
   {
-    if ($this->b != 0)
-    {
-      return ($this->a / $this->b);
-    }
-    else {
-      return "ZERO NÃO É UM DIVISOR VÁLIDO";
-    }
-  }
-
-  public function obterDivisor()
-  {
-      return $this->b;
+    $divisao = new Divisao();
+    
+    return $divisao->dividir($this->a, $this->b);
   }
 
 }
