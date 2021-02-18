@@ -16,10 +16,9 @@ Calculadora integrada a um banco de dados.
 
 - _Configurando o acesso ao banco de dados:_
 
-    - No localhost, criar um novo "schema" de nome `"db_calculadora"`.
+    - localmente, criar uma nova base de nome `"db_calculadora"`.
     - Criar a tabela `"tb_calculos"`.
-    - A tabela deve conter as colunas: 
-    
+    - A tabela deve conter as colunas:
     `num_a, num_b, desc_operacao, num_resultado, id_calculo(primary key), dt_calculo(timestamp)`.
     
     - Alterações podem ser feitas em `/public/index.php : linha 44`
